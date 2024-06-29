@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 function Navbar() {
   return (
     <div className='inconsolataFontFamily'>
-        <div className='flex justify-between items-center w-11/12 mx-auto min-h-10'>
+        <div className='flex justify-between items-center w-11/12 mx-auto'>
             <div className='flex flex-col justify-center'>
                 <img src={logo} alt="Not Found" className='place-self-center'/>
                 <span className='relative font-bold text-2xl text-gray-800'>Dsa&Dev</span>
