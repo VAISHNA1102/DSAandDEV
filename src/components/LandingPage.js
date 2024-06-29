@@ -22,8 +22,8 @@ function LandingPage() {
         
           {/* <div ><img src={dsa} alt="Not Found"className='rounded-full' style={{height:"10rem"}}/></div> */}
           <div className='flex justify-center relative'>
-              <div className='imgBack h-[31.2rem] w-96 rounded-[2rem] absolute top-14 ml-20' ></div>
-              <img src={women1} alt="" className="z-10"/>
+              <div className='imgBack h-[31.2rem] w-96 rounded-[2rem] absolute top-14 ml-20 z-20' ></div>
+              <img src={women1} alt="" className="z-30"/>
           </div>
           {/* <div><img src={dev} alt="Not Found" className='rounded-full z-1 logoAnim' style={{height:"10rem"}}/></div> */}
         </div>

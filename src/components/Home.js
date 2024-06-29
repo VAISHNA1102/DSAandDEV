@@ -5,7 +5,7 @@ import Details from './Details'
 
 function Home() {
   return (
-    <div className="homeBg">
+    <div className="homeBg realtive">
        <Navbar/>
        <LandingPage/>
        <Details/>
