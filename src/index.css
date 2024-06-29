@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,33 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.background{
+  background: rgb(255,255,255);
+  background: linear-gradient(10deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 100%);
+  /* background: rgb(255,255,255);
+background: linear-gradient(27deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 47%); */
+  /* background: rgb(255,255,255);
+background: linear-gradient(23deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 35%); */
+/* background: rgb(255,255,255);
+background: linear-gradient(38deg, rgba(255,255,255,1) 1%, rgba(178,178,233,1) 30%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
+/* background: rgb(217,221,251);
+background: linear-gradient(38deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 22%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
+}
+
+.inconsolataFontFamily {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.manropeFontFamily  {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
