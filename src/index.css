@@ -85,3 +85,7 @@ background: linear-gradient(38deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 2
     background: linear-gradient(45deg, rgba(125,125,248,1) 0%, rgba(174,49,231,1) 39%, rgba(225,173,87,1) 100%);
   }
   
+  .back {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 25%, rgba(150, 43, 165, 1) 46%, rgba(67, 55, 187, 1) 55%, rgba(0, 0, 0, 1) 74%);
+  }
