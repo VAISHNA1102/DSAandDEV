@@ -16,16 +16,16 @@ code {
     monospace;
 }
 
-.background{
-  background: rgb(255,255,255);
-  background: linear-gradient(10deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 100%);
+.background {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(10deg, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 244, 1) 100%);
   /* background: rgb(255,255,255);
 background: linear-gradient(27deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 47%); */
   /* background: rgb(255,255,255);
 background: linear-gradient(23deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 35%); */
-/* background: rgb(255,255,255);
+  /* background: rgb(255,255,255);
 background: linear-gradient(38deg, rgba(255,255,255,1) 1%, rgba(178,178,233,1) 30%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
-/* background: rgb(217,221,251);
+  /* background: rgb(217,221,251);
 background: linear-gradient(38deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 22%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
 }
 
@@ -38,9 +38,15 @@ background: linear-gradient(38deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 2
     "wdth" 100;
 }
 
-.manropeFontFamily  {
+.manropeFontFamily {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+
+.back {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 25%, rgba(150, 43, 165, 1) 46%, rgba(67, 55, 187, 1) 55%, rgba(0, 0, 0, 1) 74%);
 }
