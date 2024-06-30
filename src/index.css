@@ -16,81 +16,40 @@ code {
     monospace;
 }
 
-.homeBg{
-  background: rgb(255,255,255);
-  background: linear-gradient(170deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 100%);
-  max-height:100vh;
-  /* background: rgb(217,221,251);
-background: linear-gradient(73deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 12%, rgba(149,149,236,1) 57%, rgba(208,206,248,1) 91%); */
-  /* background: rgb(255,255,255);
-background: linear-gradient(27deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 47%); */
-  /* background: rgb(255,255,255);
-background: linear-gradient(23deg, rgba(255,255,255,1) 0%, rgba(153,153,244,1) 35%); */
-/* background: rgb(255,255,255);
-background: linear-gradient(38deg, rgba(255,255,255,1) 1%, rgba(178,178,233,1) 30%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
-/* background: rgb(217,221,251);
-background: linear-gradient(38deg, rgba(217,221,251,1) 0%, rgba(178,178,233,1) 22%, rgba(149,149,236,1) 50%, rgba(208,206,248,1) 88%); */
+.imgBack{
+  background: rgb(49,50,218);
+background: radial-gradient(circle, rgba(49,50,218,1) 0%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 87%);
 }
-
-.inconsolataFontFamily {
-  font-family: "Inconsolata", monospace;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-.manropeFontFamily  {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-  @keyframes myAnim {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-  
-    10%,
-    30%,
-    50%,
-    70% {
-      transform: translateX(-10px);
-    }
-  
-    20%,
-    40%,
-    60% {
-      transform: translateX(10px);
-    }
-  
-    80% {
-      transform: translateX(8px);
-    }
-  
-    90% {
-      transform: translateX(-8px);
-    }
+  .gradient-text {
+    background: linear-gradient(to right, #FF00CC, #FF0077);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .logoAnim{
-    animation: myAnim 5s linear 0s infinite normal forwards;
-  }
-
-  .imgBack{
-    background: rgb(125,125,248);
-    background: linear-gradient(45deg, rgba(125,125,248,1) 0%, rgba(174,49,231,1) 39%, rgba(225,173,87,1) 100%);
+  .manropeFontFamily  {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
   }
   
-  .back {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 25%, rgba(150, 43, 165, 1) 46%, rgba(67, 55, 187, 1) 55%, rgba(0, 0, 0, 1) 74%);
+  .inconsolataFontFamily {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
   }
+  
+/* .shadow-nav {
+  box-shadow: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(50%, #0057ff),
+    color-stop(100%, #00FFFF) 
+  );
+} */
 
-  .cardBg{
-    background: rgb(63,61,61);
-background: linear-gradient(257deg, rgba(63,61,61,1) 0%, rgba(0,0,0,1) 57%);
-  }
+
