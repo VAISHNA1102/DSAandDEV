@@ -16,42 +16,44 @@ code {
     monospace;
 }
 
-.imgBack{
-  background: rgb(49,50,218);
-background: radial-gradient(circle, rgba(49,50,218,1) 0%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 87%);
+.imgBack {
+  background: rgb(49, 50, 218);
+  background: radial-gradient(circle, rgba(49, 50, 218, 1) 0%, rgba(0, 0, 0, 1) 76%, rgba(0, 0, 0, 1) 87%);
 }
-  .gradient-text {
-    background: linear-gradient(to right, #FF00CC, #FF0077);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 
-  .manropeFontFamily  {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .inconsolataFontFamily {
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
+.gradient-text {
+  background: linear-gradient(to right, #FF00CC, #FF0077);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .glass{
-    background: rgba(255,255,255,0.05);
--webkit-backdrop-filter: blur(22px);
-backdrop-filter: blur(22px);
-border: 1px solid rgba(255,255,255,0.25);
-  }
-  .glass:hover{
-    border: none;
-  }
-  
+.manropeFontFamily {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.inconsolataFontFamily {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass:hover {
+  border: none;
+}
+
 /* .shadow-nav {
   box-shadow: -webkit-gradient(
     linear,
@@ -62,4 +64,53 @@ border: 1px solid rgba(255,255,255,0.25);
   );
 } */
 
+.back {
+  font-size: 16px;
+  font-family: "Manrope", sans-serif;
+  color: wheat;
+}
 
+.back:hover {
+  padding: 2px 7px;
+  border: 1px solid white;
+  border-radius: 7px;
+  color: black;
+  background: rgb(170, 128, 190);
+  background: linear-gradient(90deg, rgba(180, 121, 207, 0.996) 0%, rgba(181, 131, 152, 1) 49%, rgba(165, 180, 233, 1) 100%);
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.icons {
+  font-size: 18px; 
+  border: 1px solid white;
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%; 
+  display: inline-flex; 
+  justify-content: center;
+  align-items: center; 
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.icons:hover {
+  color: rgb(203, 160, 114);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .icons {
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .icons {
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+  }
+}
