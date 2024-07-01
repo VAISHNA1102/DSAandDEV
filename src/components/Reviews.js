@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 
 const reviews = [
   {
@@ -10,7 +10,7 @@ const reviews = [
     name: "Karan Wagh"
   },
   {
-    review: "The combination of Data Structures, Algorithms, and Web Development all in one place is fantastic. I can already see an improvement in my coding skills..",
+    review: "The combination of Data Structures, Algorithms, and Web Development all in one place is fantastic. I can already see an improvement in my coding skills.",
     name: "Sanjay Sargam"
   },
   {
@@ -19,10 +19,20 @@ const reviews = [
   }
 ];
 
+const truncateText = (text, wordLimit) => {
+  const words = text.split(' ');
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(' ') + '...';
+  }
+  return text;
+};
+
 const ReviewCard = ({ review, name }) => (
-  <div className="glass text-white p-6 rounded-lg shadow-md max-w-sm mx-auto h-full flex flex-col">
-    <p className="text-3xl manropeFontFamily  font-bold mb-3">"</p>
-    <p className="mb-4 flex-grow inconsolataFontFamily font-light ">{review}</p>
+  <div className="glass text-white p-6 rounded-lg shadow-md w-full max-w-sm mx-auto flex flex-col h-64">
+    <p className="text-3xl manropeFontFamily font-bold mb-3">"</p>
+    <p className="mb-4 flex-grow inconsolataFontFamily font-light overflow-hidden">
+      {truncateText(review, 25)}
+    </p>
     <p className="font-bold manropeFontFamily">{name}</p>
   </div>
 );
@@ -38,33 +48,19 @@ const Reviews = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
   };
 
-  const [mobile, setMobile] = useState(window.innerWidth < 768);
-  const handleResize = () => {
-    setMobile(window.innerWidth < 768);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div className="py-12 relative mb-24 md:mb-34">
-      <div className="container mx-auto px-15 md:w-10/12 ">
-        {mobile && <div className="flex justify-center w-10/12 mx-auto md:gap-6">
-          {[1].map((offset) => {
+      <div className="container mx-auto px-4 md:px-15 lg:w-10/12">
+        <div className="flex flex-col md:flex-row justify-center gap-6">
+          {[0, 1, 2].map((offset) => {
             const index = (currentIndex + offset) % reviews.length;
-            return <ReviewCard key={index} {...reviews[index]} />;
+            return (
+              <div key={index} className={`w-full md:w-1/3 ${offset === 1 ? 'block' : 'hidden md:block'}`}>
+                <ReviewCard {...reviews[index]} />
+              </div>
+            );
           })}
-        </div>}
-        {!mobile && <div className="flex justify-center w-10/12 mx-auto md:gap-6">
-          {[0,1,2].map((offset) => {
-            const index = (currentIndex + offset) % reviews.length;
-            return <ReviewCard key={index} {...reviews[index]} />;
-          })}
-        </div>}
+        </div>
       </div>
       <button 
         onClick={prevSlide} 

@@ -1,0 +1,36 @@
+.team-images-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    width: 75%;
+    margin: 20px auto; 
+  }
+  
+  .team-image {
+    background-image: linear-gradient(to right, #805ad5, #3f37c9);
+    flex: 1; 
+    max-width: 300px; 
+    overflow: hidden; 
+    border-radius: 8px; 
+  }
+  
+  .team-image img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    border-radius: 8px; 
+  }
+  
+  @media (max-width: 768px) {
+    .team-images-container {
+      flex-direction: column; 
+      width: 77%; 
+      gap: 25px; 
+    }
+  
+    .team-image {
+      max-width: none; 
+      width: 100%; 
+    }
+  }
+    
