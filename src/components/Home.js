@@ -4,6 +4,7 @@ import LandingPage from './LandingPage'
 import Details from './Details'
 import Info from './Info'
 import Team from './Team'
+import Footer from './Footer'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Details/>
       <Info/>
       <Team/>
+      <Footer/>
     </div>
   )
 }
