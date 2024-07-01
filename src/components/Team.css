@@ -1,9 +1,9 @@
 .team-images-container {
     display: flex;
     justify-content: center; 
-    gap: 20px; 
+    gap: 40px; 
     width: 75%;
-    margin: 20px auto; 
+    margin: 50px auto; 
   }
   
   .team-image {
