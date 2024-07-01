@@ -5,19 +5,16 @@ import '../index.css';
 
 const Footer = () => {
     return (
-        <footer className="text-white py-6" style={{
-            background: 'rgb(46,40,181)',
-            background: 'radial-gradient(circle, rgba(46,40,181,1) 0%, rgba(49,51,78,1) 51%, rgba(9,21,65,1) 89%)'
-        }}>
+        <footer className="text-white py-6 border-b border-t-2">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-4">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-4 md:w-11/12 md:mx-auto">
                     <div className="mb-4 md:mb-0">
                         <img src={logo} className="h-20 mx-auto md:mx-0" alt="Logo" />
                     </div>
-                    <div className="space-x-0 md:space-x-4 mb-4 md:mb-0 text-center md:text-left">
-                        <a href="#" className="back block md:inline md:text-2xl ">About</a>
-                        <a href="#" className="back block md:inline md:text-2xl ">Contact</a>
-                        <a href="#" className="back block md:inline md:text-2xl ">Tutorial</a>
+                    <div className="space-x-0 md:space-x-1 mb-4 md:mb-0 text-center md:text-left space-y-2 md:ml-28">
+                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl">About</a>
+                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl ">Contact</a>
+                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl ">Tutorial</a>
                     </div>
                     <div className="flex justify-center md:justify-start space-x-4 sm:space-x-3 xs:space-x-2">
                         <a href="https://www.facebook.com" className="icons" target="_blank" rel="noopener noreferrer">
@@ -34,7 +31,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="text-sm text-center md:text-lg">
+                <div className="text-sm text-center">
                     &copy; {new Date().getFullYear()} DSA & Dev. All rights reserved.
                 </div>
             </div>
