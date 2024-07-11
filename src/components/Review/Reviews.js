@@ -49,7 +49,7 @@ const Reviews = () => {
   };
 
   return (
-    <div className="py-12 relative mb-24 md:mb-34">
+    <div className="py-12 relative md:mb-34">
       <div className="container mx-auto px-4 md:px-15 lg:w-10/12">
         <div className="flex flex-col md:flex-row justify-center gap-6">
           {[0, 1, 2].map((offset) => {

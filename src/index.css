@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -94,7 +95,7 @@ code {
 }
 
 .icons:hover {
-  color: rgb(203, 114, 114);
+  color: rgb(108, 119, 179);
   background-color: linear-gradient(to right, #D8B4FE, #1E3A8A);
 }
 
