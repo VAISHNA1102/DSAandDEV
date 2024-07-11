@@ -3,7 +3,7 @@ import LandingPage from './LandingPage'
 import Details from './Details'
 import Info from './Info'
 import Team from './Team'
-import Testimonals from './Review/Testimonals'
+import Testimonals from './Testimonals'
 import Footer from './Footer'
 
 function Home() {
