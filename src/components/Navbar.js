@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,18 +22,20 @@ function Navbar() {
   }, []);
   return ( 
     <div>
-      <nav className={`${isScrolled ? 'bg-gray-900' : 'bg-black'}  w-full top-0 start-0 `}>
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-2 rtl:space-x-reverse">
+      <nav className={`${isScrolled ? 'bg-gray-900' : 'bg-black'}  w-full top-0 start-0 border-b-2`}>
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" >
+        <Link to="/" className="flex items-center space-x-2 rtl:space-x-reverse">
             <img src={logo} className="h-8" alt="Flowbite Logo"/>
             <div className='flex flex-col'>
             <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white italic'>DSA&DEV</span>
             <span className='h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500'></span>
             </div>
 
-        </a>
+        </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <Link to="/login">
             <button type="button" className="text-white  focus:outline-none font-bold rounded-xl text-sm px-3 py-2 text-center  dark:hover:bg-gradient-to-r from-fuchsia-500  border border-white">Get Started</button>
+            </Link>
             
             <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100  focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gradient-to-r from-fuchsia-500   dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded={isMenuOpen} onClick={toggleMenu}>
               <span className="sr-only">Open main menu</span>
@@ -50,10 +53,10 @@ function Navbar() {
               <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">About</a>
             </li>
             <li>
-              <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Tutorial</a>
+              <Link to={"/tutorial"} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Tutorial</Link>
             </li>
             <li>
-              <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Contact</a>
+              <Link to={"/contact"} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Contact</Link>
             </li>
           </ul>
         </div>
