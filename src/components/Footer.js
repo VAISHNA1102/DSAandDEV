@@ -5,7 +5,7 @@ import '../index.css';
 
 const Footer = () => {
     return (
-        <footer className="text-white py-6 border-b border-t-2 bg-black ">
+        <footer className="text-white py-6 border-b border-t-2 ">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-4 md:w-11/12 md:mx-auto">
                     <div className="mb-4 md:mb-0">
