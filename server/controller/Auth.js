@@ -10,7 +10,7 @@ require("dotenv").config()
 
 exports.signup = async (req, res) => {
     try {
-        const { firstName,lastName,email,otp,accountType,password,confirmPassword,contactNumber } = req.body;
+        const { firstName,lastName,email,confirmPassword,password,otp,accountType,contactNumber } = req.body;
 
         if (!firstName || !lastName || !email || !password || !confirmPassword || !otp || !accountType) {
             return res.status(400).json({
@@ -18,7 +18,7 @@ exports.signup = async (req, res) => {
                 message: "All Fields are required",
             });
         }
-        console.log(password," ",confirmPassword);
+
         
         if (password !== confirmPassword) {
             return res.status(400).json({
@@ -36,7 +36,13 @@ exports.signup = async (req, res) => {
         }
 
         const response = await OTP.find({ email }).sort({ createdAt: -1 }).limit(1);
-        if (response.length === 0 || otp !== response[0].otp) {
+
+        function arrayToNumber(otp) {
+            return Number(otp.join(''));
+        }
+        let abc=arrayToNumber(otp);
+
+        if (response.length === 0 || abc != (response[0].otp)) {
             return res.status(400).json({
                 success: false,
                 message: "The OTP is not valid",
