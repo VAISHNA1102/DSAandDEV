@@ -87,7 +87,7 @@ export const login=(email, password, navigate)=>{
                 dispatch(logout(navigate))
             }, 7200000 )
        
-            navigate("/dashboard/my-profile");
+            navigate("/tutorial");
         }catch(e){
             console.log("Error occured at login..", e);
             toast.error("Login Failed");
