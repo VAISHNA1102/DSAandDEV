@@ -34,14 +34,14 @@ export const sendOtp = (email, navigate) => {
 
 
 //signup
-export const signUp=(firstName,lastName,email,otp,accountType,password,confirmPassword,contactNumber,navigate)=>{
+export const signUp=(firstName, lastName, email, password, confirmPassword, accountType, otp,contactNumber,navigate)=>{
     return async(dispatch)=>{
         dispatch(setLoading(true));
         const toastID = toast.loading("Loading...");
 
         try{
             const response=await apiConnector("POST",user.SIGNUP_API,{
-                firstName,lastName,email,otp,accountType,password,confirmPassword,contactNumber
+                firstName, lastName, email, password, confirmPassword, accountType, otp,contactNumber
             });
 
             if(!response.data.success){
@@ -52,7 +52,6 @@ export const signUp=(firstName,lastName,email,otp,accountType,password,confirmPa
 
             navigate("/login");
         }catch(e){
-            console.log(firstName," ",lastName," ",email," ",otp," ",accountType," ",password," ",confirmPassword," ",contactNumber)
             console.log("error occured at sign Up ", e);
             toast.error("Signup Failed");
             navigate("/signup");
