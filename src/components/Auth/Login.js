@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
-import SignUp from './SignUp';
+import { useDispatch, useSelector } from 'react-redux';
+import Spinner from '../common/Spinner'
+import {login} from "../../services/operations/authAPIs"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [showSignUp, setShowSignUp] = useState(false);
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const {loading}=useSelector((state)=>(state.auth));
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log('Login attempted with:', username, password);
+    dispatch(login(username,password,navigate));
   };
 
 
   return (
     <div className="min-h-screen max-w-maxContent bg-black flex items-center justify-center p-2 sm:p-6 lg:p-8">
+    {
+            loading ? 
+            (
+                <Spinner/>
+            ):(
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-xl overflow-hidden p-2">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 bg-slate-700 p-8 md:p-12 flex items-center justify-center rounded-lg">
@@ -63,13 +75,12 @@ const Login = () => {
                 </button>
               </form>
               <div className="mt-6 flex flex-col sm:flex-row justify-between text-sm">
-                <a href="#" className="text-blue-600 hover:underline mb-2 sm:mb-0">Forgot Password?</a>
-                <a href="#" className="text-blue-600 hover:underline" onClick={() => setShowSignUp(true)}>Not a Member yet?</a>
+                <div href="#" className="text-blue-600 hover:underline mb-2 sm:mb-0">Forgot Password?</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };

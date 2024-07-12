@@ -1,35 +1,59 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Spinner from "../common/Spinner"
+import {setSignUpData} from "../../services/slices/auth"
+import { useDispatch, useSelector } from 'react-redux';
+import {sendOtp} from "../../services/operations/authAPIs"
 
 const SignUp = ({ onBackToLogin }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const accountType="Student"
+
+  const {loading} =useSelector((state)=>state.auth);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    mobileNumber: '',
-    agreeTerms: false
+    contactNumber: '',
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     }));
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    console.log('Sign up attempted with:', formData);
-    navigate('/verify-email', { state: { email: formData.email } });
+
+    let signupData = {
+      ...formData,
+      accountType,
+    }
+    dispatch(setSignUpData(signupData));
+    dispatch(sendOtp(formData.email,navigate));
+
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      contactNumber: '',
+    })
   };
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-2 sm:p-6 lg:p-8">
+    {loading ? (
+        <Spinner/>
+      ) : (
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-xl overflow-hidden">
       <div className="flex flex-col md:flex-row my-auto p-2 bg-slate-700">
       <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 text-white">
@@ -76,19 +100,6 @@ const SignUp = ({ onBackToLogin }) => {
               </div>
             </div>
             <div>
-              <label htmlFor="username" className="sr-only">Username</label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-slate-500 focus:border-slate-500"
-                placeholder="Username"
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
               <label htmlFor="email" className="sr-only">Email Address</label>
               <input
                 id="email"
@@ -130,28 +141,14 @@ const SignUp = ({ onBackToLogin }) => {
             <div>
               <label htmlFor="mobileNumber" className="sr-only">Mobile Number (optional)</label>
               <input
-                id="mobileNumber"
-                name="mobileNumber"
+                id="contactNumber"
+                name="contactNumber"
                 type="tel"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-slate-500 focus:border-slate-500"
                 placeholder="Mobile Number (optional)"
-                value={formData.mobileNumber}
+                value={formData.contactNumber}
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex items-center">
-              <input
-                id="agreeTerms"
-                name="agreeTerms"
-                type="checkbox"
-                className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
-                checked={formData.agreeTerms}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="agreeTerms" className="ml-2 block text-sm text-gray-900">
-                By signing up I agree with <a href="#" className="text-blue-600 hover:underline">terms and conditions</a>
-              </label>
             </div>
             <button
               type="submit"
@@ -172,7 +169,7 @@ const SignUp = ({ onBackToLogin }) => {
         </div>
       </div>
     </div>
-      </div>
+      </div>)}
     </div>
   );
 };
