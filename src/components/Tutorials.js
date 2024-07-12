@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import htmlImg from '../../assets/TutorialImg/HTML.png'
-import cssImg from '../../assets/TutorialImg/CSS.png'
-import javascriptImg from '../../assets/TutorialImg/JS.png'
-import javaImg from '../../assets/TutorialImg/Java.png'
-import cppImg from '../../assets/TutorialImg/c++.png'
-import pythonImg from '../../assets/TutorialImg/python.png'
-import Footer from '../Footer'
+import htmlImg from '../assets/TutorialImg/HTML.png'
+import cssImg from '../assets/TutorialImg/CSS.png'
+import javascriptImg from '../assets/TutorialImg/JS.png'
+import javaImg from '../assets/TutorialImg/Java.png'
+import cppImg from '../assets/TutorialImg/c++.png'
+import pythonImg from '../assets/TutorialImg/python.png'
+import Footer from './Footer'
 
 const cardData = [
   {
