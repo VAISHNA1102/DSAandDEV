@@ -11,12 +11,9 @@ const Login = () => {
     console.log('Login attempted with:', username, password);
   };
 
-  if (showSignUp) {
-    return <SignUp onBackToLogin={() => setShowSignUp(false)} />;
-  }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-2 sm:p-6 lg:p-8">
+    <div className="min-h-screen max-w-maxContent bg-black flex items-center justify-center p-2 sm:p-6 lg:p-8">
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-xl overflow-hidden p-2">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 bg-slate-700 p-8 md:p-12 flex items-center justify-center rounded-lg">
@@ -31,15 +28,6 @@ const Login = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 bg-white p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex justify-end">
-              <button className="mr-2 bg-blue-600 text-white px-4 py-1 rounded">Log In</button>
-              <button
-                className="bg-none border-2 text-black px-4 py-1 rounded hover:scale-105 hover:bg-gray-300"
-                onClick={() => setShowSignUp(true)}
-              >
-                Sign Up
-              </button>
-            </div>
             <div className="max-w-md mx-auto w-full">
               <h2 className="text-3xl text-slate-700 font-bold mb-4 text-center md:text-left">Log In</h2>
               <form onSubmit={handleLogin} className="space-y-6">

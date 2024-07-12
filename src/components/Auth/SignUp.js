@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = ({ onBackToLogin }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,6 +25,7 @@ const SignUp = ({ onBackToLogin }) => {
   const handleSignUp = (e) => {
     e.preventDefault();
     console.log('Sign up attempted with:', formData);
+    navigate('/verify-email', { state: { email: formData.email } });
   };
 
   return (
@@ -41,17 +44,6 @@ const SignUp = ({ onBackToLogin }) => {
         </div>
       </div>
       <div className="w-full md:w-1/2 bg-white py-2 md:p-12 flex flex-col justify-between rounded-md">
-        <div className="flex justify-end gap-2 mb-4">
-          <button 
-            className="bg-none border-2 text-black px-4 py-1 rounded hover:scale-105 hover:bg-gray-300"
-            onClick={onBackToLogin}
-          >
-            Log In
-          </button>
-          <button className="bg-blue-600 mr-2  text-white px-4 py-1 rounded">
-            Sign Up
-          </button>
-        </div>
         <div className="max-w-md mx-auto w-full">
         <h2 className="text-3xl text-slate-700 font-bold mb-4 text-center md:text-left">Sign Up</h2>
           <form onSubmit={handleSignUp} className="space-y-4">
@@ -155,6 +147,7 @@ const SignUp = ({ onBackToLogin }) => {
                 className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
                 checked={formData.agreeTerms}
                 onChange={handleChange}
+                required
               />
               <label htmlFor="agreeTerms" className="ml-2 block text-sm text-gray-900">
                 By signing up I agree with <a href="#" className="text-blue-600 hover:underline">terms and conditions</a>

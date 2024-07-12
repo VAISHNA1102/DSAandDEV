@@ -1,7 +1,7 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import logo from '../assets/logo.png';
-import '../index.css'; 
+import logo from '../../assets/logo.png';
+import '../../index.css'; 
 
 const Footer = () => {
     return (

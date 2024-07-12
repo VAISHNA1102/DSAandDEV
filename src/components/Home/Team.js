@@ -1,7 +1,7 @@
 import React from 'react';
-import Bg from '../assets/Bg.png';
-import Vbg from '../assets/Vbg.png';
-import Sbg from '../assets/Sbg.png';
+import Bg from '../../assets/Bg.png';
+import Vbg from '../../assets/Vbg.png';
+import Sbg from '../../assets/Sbg.png';
 import './Team.css'; // Import your CSS file where you define styles
 
 function Team() {

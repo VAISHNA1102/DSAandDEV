@@ -1,7 +1,7 @@
 import React from 'react';
-import dsaLogo from '../assets/DSA.jpg';
-import devLogo from '../assets/Dev.jpg';
-import openSourceLogo from '../assets/Open.jpg';
+import dsaLogo from '../../assets/DSA.jpg';
+import devLogo from '../../assets/Dev.jpg';
+import openSourceLogo from '../../assets/Open.jpg';
 
 function Cards() {
   return (

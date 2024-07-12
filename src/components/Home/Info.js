@@ -1,6 +1,6 @@
 import React from 'react'
-import imgDev from '../assets/DEVimg.jpeg'
-import imgDsa from '../assets/DSAimg.jpeg'
+import imgDev from '../../assets/DEVimg.jpeg'
+import imgDsa from '../../assets/DSAimg.jpeg'
 
 const Info = () => {
   return (
