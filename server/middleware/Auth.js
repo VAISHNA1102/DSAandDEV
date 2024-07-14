@@ -4,7 +4,7 @@ require("dotenv").config();
 exports.auth=async(req,res,next)=>{
     try{
         //exact token
-        const token=req.cookies.token || req.body.token || req.header("Authorisation").replace("Bearer","");
+        const token=req.cookies.token || req.body.token || req.header("Authorization").replace("Bearer ", "");
         //validate token
         if(!token){
             return res.status(401).json({
@@ -14,14 +14,14 @@ exports.auth=async(req,res,next)=>{
         }
         //verify token
         try{
-            const decode=await jwt.verify(token,process.env.JWT_SECRET);
+            const decode=jwt.verify(token,process.env.JWT_SECRET);
             //add decoded token into the user body to access it while authencating and authorizing the user
             req.user=decode;
         }catch(e){
             console.log(e);
             return res.status(401).json({ 
                 success: false, 
-                message: "token is invalid",
+                message: "token is invalid!",
                 error:e.message
             });
         }
@@ -30,7 +30,7 @@ exports.auth=async(req,res,next)=>{
         console.log(e);
         return res.status(500).json({
             success:false,
-            message:"Something went wrong while validating token",
+            message:"Something went wrong while validating token!",
             error:e.message
         })
     }

@@ -81,6 +81,7 @@ export const login=(email, password, navigate)=>{
             localStorage.setItem("token", JSON.stringify(response.data.token));
             localStorage.setItem("user", JSON.stringify(response.data.user));
 
+            console.log(localStorage.getItem("user"));
             // calling auto logout component            
             setTimeout( () => {
                 console.log("Auto logout triggered"); 

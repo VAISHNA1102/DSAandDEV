@@ -10,3 +10,12 @@ export const user  = {
     RESETPASSWORDTOKEN_API : BASE_URL + "/auth/reset-password-token",
     RESETPASSWORD_API : BASE_URL + "/auth/reset-password",
 }
+
+export const profile={
+    GET_USER_DETAIL: BASE_URL +"/profile/get-user-details",
+    GET_ENROLLED_TUTORIAL: BASE_URL+"/profile/get-enrolled-tutorials",
+    UPDATE_PROFILE: BASE_URL+ "/profile/update-profile",
+    UPDATE_PROFILE_PIC: BASE_URL+ "/profile/update-display-picture",
+
+    CHANGED_PASS: BASE_URL+ "/auth/changepassword"
+}
