@@ -26,7 +26,7 @@ function Navbar() {
         <Link to="/" className="flex items-center space-x-2 rtl:space-x-reverse">
             <img src={logo} className="h-8" alt="Flowbite Logo"/>
             <div className='flex flex-col'>
-            <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white italic'>DSA&DEV</span>
+            <span className='self-center text-2xl font-semibold whitespace-nowrap text-white hover:bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 inline-block hover:text-transparent hover:bg-clip-text italic'>DSA&DEV</span>
             <span className='h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500'></span>
             </div>
 
@@ -34,11 +34,11 @@ function Navbar() {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
               <div className='flex gap-2'>
               <Link to="/login">
-                  <button type="button" className="text-white  focus:outline-none font-bold rounded-xl text-sm px-3 py-2 text-center  dark:hover:bg-gradient-to-r from-fuchsia-500  border border-white">Login</button>
+                  <button type="button" className="text-white  focus:outline-none font-bold rounded-xl text-sm px-3 py-2 text-center  hover:bg-gray-700 hover:border-gray-500 hover:scale-105 border border-white hover:text-blue-500">Login</button>
                   </Link>
 
                   <Link to="/signup">
-                  <button type="button" className="text-white  focus:outline-none font-bold rounded-xl text-sm px-3 py-2 text-center  dark:hover:bg-gradient-to-r from-fuchsia-500  border border-white">Signup</button>
+                  <button type="button" className="text-white  focus:outline-none font-bold rounded-xl text-sm px-3 py-2 text-center  hover:bg-gray-700 hover:border-gray-500 hover:scale-105 border border-white hover:text-blue-500">Signup</button>
                   </Link>
               </div>
             <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100  focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gradient-to-r from-fuchsia-500   dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded={isMenuOpen} onClick={toggleMenu}>
@@ -49,18 +49,18 @@ function Navbar() {
           </button>
         </div>
         <div className={`items-center justify-between w-full md:flex md:w-auto ${isMenuOpen ? 'block' : 'hidden'}`}  id="navbar-sticky">
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
           <li>
-              <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Home</a>
+              <a href="/" className="block text-white py-2 px-3 hover:scale-110 hover:underline md:hover:bg-transparent md:hover:text-blue-400 md:p-0  dark:border-gray-700 md:hover:underline-offset-4">Home</a>
             </li>
             <li>
-              <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">About</a>
+              <a href="/" className="block text-white py-2 px-3 hover:scale-110 hover:underline md:hover:bg-transparent md:hover:text-blue-400 md:p-0  dark:border-gray-700 md:hover:underline-offset-4">About</a>
             </li>
             <li>
-              <Link to={"/tutorial"} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Tutorial</Link>
+              <Link to={"/tutorial"} className="block text-white py-2 px-3 hover:scale-110 hover:underline md:hover:bg-transparent md:hover:text-blue-400 md:p-0  dark:border-gray-700 md:hover:underline-offset-4">Tutorial</Link>
             </li>
             <li>
-              <Link to={"/contact"} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:px-2 dark:text-white dark:hover:bg-gradient-to-r from-fuchsia-500  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:hover:underline">Contact</Link>
+              <Link to={"/contact"} className="block text-white py-2 px-3 hover:scale-110 hover:underline md:hover:bg-transparent md:hover:text-blue-400 md:p-0  dark:border-gray-700 md:hover:underline-offset-4">Contact</Link>
             </li>
           </ul>
         </div>
