@@ -2,9 +2,10 @@ import React from 'react'
 import Sidebar from '../Dashboard/Sidebar'
 import { FaRegEdit } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import {setEditProfile} from "../../services/slices/editSlice"
+import {setEditProfile,setEditPass,setEditPic} from "../../services/slices/editSlice"
 import ChangeProfileDetails from './Settings/ChangeProfileDetails'
-
+import ChangePassword from './Settings/ChangePassword'
+import ChangeProfilePicture from './Settings/ChangeProfilePicture'
 
 const Profile = () => {
   const {user}=useSelector((state)=>state.profile)
@@ -16,9 +17,21 @@ const Profile = () => {
     dispatch(setEditProfile(true));
     console.log(editProfile);
   }
+  
+  const editPasswordHandler=()=>{
+    console.log("click....");
+    dispatch(setEditPass(true));
+  }
+
+  const editPicHandler=()=>{
+    console.log("click....");
+    dispatch(setEditPic(true));
+  }
   return (
     <div className='bg-gray-700 h-[calc(100vh-70px)]'>
       <ChangeProfileDetails/>
+      <ChangePassword/>
+      <ChangeProfilePicture/>
       <div className='flex flex-row h-full overflow-hidden'>
         <Sidebar />
         <div className='p-4 w-full overflow-y-auto'>
@@ -26,17 +39,23 @@ const Profile = () => {
           <div className='flex flex-col space-y-6 md:space-y-10 mx-10'>
             <div className='flex flex-col md:flex-row border w-full p-4 md:p-6 items-center rounded-lg bg-gray-900 justify-between'>
               <div className='flex flex-col md:flex-row items-center py-2 px-4'>
-                <div className='w-16 h-16 md:w-20 md:h-20 rounded-full flex justify-center mb-4 md:mb-0'>
+                <div className='w-16 h-16 md:w-20 md:h-20 rounded-full flex justify-center mb-4 md:mb-0 hover:cursor-pointer' onClick={editPicHandler}>
                   <img src={user?.image} alt="" className="w-full h-full rounded-full object-cover" />
                 </div>
-                <div className='md:mx-10 text-center md:text-left'>
+                <div className='md:mx-10 text-center md:text-left'  >
                   <h2 className='text-xl md:text-2xl font-bold text-white'>{(user?.firstName).charAt(0).toUpperCase() + (user?.firstName).slice(1) + " " + (user?.lastName).charAt(0).toUpperCase() + (user?.lastName).slice(1)}</h2>
                   <h4 className='text-base md:text-xl  text-slate-400'>{user?.email}</h4>
                 </div>
               </div>
+              <div className="flex gap-4">
               <div className="bg-blue-300 text-black px-4 py-2 rounded-md flex items-center font-bold mt-4 md:mt-0" onClick={editProfileHandler}>
                 <div className='px-2 text-base hover:cursor-pointer'>Edit</div>
                 <FaRegEdit />
+              </div>
+              <div className="bg-blue-300 text-black px-4 py-2 rounded-md flex items-center font-bold mt-4 md:mt-0 hover:cursor-pointer" onClick={editPasswordHandler}>
+                <div className='px-2 text-base hover:cursor-pointer'>Change Password</div>
+                <FaRegEdit />
+              </div>
               </div>
             </div>
             <div className='flex flex-col border w-full p-4 md:p-6 rounded-lg bg-gray-900'>

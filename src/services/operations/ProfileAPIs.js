@@ -1,6 +1,5 @@
 import { apiConnector } from "../apiConnector";
 import {setProfile,setLoading} from "../slices/profileSlice";
-import {setSignUpData} from "../slices/auth";
 import { toast } from "react-hot-toast"
 import {profile} from "../apis"
 import { logout } from "./authAPIs"
@@ -35,7 +34,7 @@ export const getUserDetails=(token,navigate)=>{
 
 export const getEnrolledTutorial=async(token)=>{
     const toastId = toast.loading("Loading...")
-    const result=[];
+    let result=[];
     try{
         const response = await apiConnector(
             "GET",
@@ -136,7 +135,7 @@ export const deleteProfile=(token, navigate)=> {
 }
 
 
-export const changePassword=(token,formData)=>{
+export const changePasswordBack=(token,formData)=>{
     return async(dispatch)=>{
         const toastID=toast.loading("Loading....");
         try{
@@ -147,6 +146,7 @@ export const changePassword=(token,formData)=>{
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
+
             toast.success("Password Changed Successfully")
         }catch(e){
             console.log("CHANGE_PASSWORD_API API ERROR............", e)

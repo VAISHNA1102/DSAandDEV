@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    editProfile:false
+    editProfile:false,
+    editPass:false,
+    editPic:false
 }
 
 export const editSlice=createSlice({
@@ -10,9 +12,15 @@ export const editSlice=createSlice({
     reducers:{
         setEditProfile(state, value){
             state.editProfile = value.payload;
+        },
+        setEditPass(state, value){
+            state.editPass= value.payload;
+        },
+        setEditPic(state, value){
+            state.editPic= value.payload;
         }
     }
 })
 
-export const {setEditProfile} = editSlice.actions;
+export const {setEditProfile,setEditPass,setEditPic} = editSlice.actions;
 export default editSlice.reducer;
