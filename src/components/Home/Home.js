@@ -1,7 +1,6 @@
 import React from 'react'
 import LandingPage from './LandingPage'
 import Details from './Details'
-import Info from './Info'
 import Team from './Team'
 import Testimonals from './Testimonals'
 import Footer from '../common/Footer'
@@ -11,7 +10,6 @@ function Home() {
     <div className='imgBack'>
       <LandingPage/>
       <Details/>
-      <Info/>
       <Team/>
       <Testimonals/>
       <Footer/>

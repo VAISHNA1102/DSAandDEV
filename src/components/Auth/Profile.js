@@ -28,7 +28,7 @@ const Profile = () => {
     dispatch(setEditPic(true));
   }
   return (
-    <div className='bg-gray-700 h-[calc(100vh-70px)]'>
+    <div className='bg-gray-700 h-[calc(100vh-88px)]'>
       <ChangeProfileDetails/>
       <ChangePassword/>
       <ChangeProfilePicture/>
@@ -37,17 +37,17 @@ const Profile = () => {
         <div className='p-4 w-full overflow-y-auto'>
           <h1 className="text-3xl font-bold mb-6 text-white pb-10 mx-10 my-5">My Profile</h1>
           <div className='flex flex-col space-y-6 md:space-y-10 mx-10'>
-            <div className='flex flex-col md:flex-row border w-full p-4 md:p-6 items-center rounded-lg bg-gray-900 justify-between'>
-              <div className='flex flex-col md:flex-row items-center py-2 px-4'>
+            <div className='flex flex-col md:flex-row border w-full p-4 md:p-6 items-center rounded-lg bg-gray-900 justify-between sm:overflow-x-hidden sm:mx-auto'>
+              <div className='flex flex-col md:flex-row items-center py-2 px-4 sm:px-0'>
                 <div className='w-16 h-16 md:w-20 md:h-20 rounded-full flex justify-center mb-4 md:mb-0 hover:cursor-pointer' onClick={editPicHandler}>
                   <img src={user?.image} alt="" className="w-full h-full rounded-full object-cover" />
                 </div>
-                <div className='md:mx-10 text-center md:text-left'  >
+                <div className='md:mx-8 text-center md:text-left'  >
                   <h2 className='text-xl md:text-2xl font-bold text-white'>{(user?.firstName).charAt(0).toUpperCase() + (user?.firstName).slice(1) + " " + (user?.lastName).charAt(0).toUpperCase() + (user?.lastName).slice(1)}</h2>
                   <h4 className='text-base md:text-xl  text-slate-400'>{user?.email}</h4>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 lg:flex-row sm:flex-col sm:gap-2">
               <div className="bg-blue-300 text-black px-4 py-2 rounded-md flex items-center font-bold mt-4 md:mt-0" onClick={editProfileHandler}>
                 <div className='px-2 text-base hover:cursor-pointer'>Edit</div>
                 <FaRegEdit />

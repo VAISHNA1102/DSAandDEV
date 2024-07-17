@@ -12,9 +12,9 @@ const Footer = () => {
                         <img src={logo} className="h-20 mx-auto md:mx-0" alt="Logo" />
                     </div>
                     <div className="space-x-0 md:space-x-1 mb-4 md:mb-0 text-center md:text-left space-y-2 md:ml-28">
-                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl">About</a>
-                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl ">Contact</a>
-                        <a href="/" className="hover:bg-gradient-to-r from-purple-300 to-blue-700 px-4 hover:text-black block md:inline hover:rounded-md md:text-xl ">Tutorial</a>
+                        <a href="/" className="md:hover:text-blue-400 hover:scale-110 hover:underline px-4 hover:text-black hover:rounded-md md:text-xl">About</a>
+                        <a href="/" className="md:hover:text-blue-400 hover:scale-110 hover:underline px-4 hover:text-black hover:rounded-md md:text-xl ">Contact</a>
+                        <a href="/" className="md:hover:text-blue-400 hover:scale-110 hover:underline px-4 hover:text-black hover:rounded-md md:text-xl ">Tutorial</a>
                     </div>
                     <div className="flex justify-center md:justify-start space-x-4 sm:space-x-3 xs:space-x-2">
                         <a href="https://www.facebook.com" className="icons" target="_blank" rel="noopener noreferrer">
