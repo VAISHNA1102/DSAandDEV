@@ -50,12 +50,12 @@ const SignUp = ({ onBackToLogin }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-2 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-700 flex items-center justify-center p-2 sm:p-6 lg:p-8">
     {loading ? (
         <Spinner/>
       ) : (
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-xl overflow-hidden">
-      <div className="flex flex-col md:flex-row my-auto p-2 bg-slate-700">
+      <div className="flex flex-col md:flex-row my-auto p-2 bg-gray-900">
       <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 text-white">
         <div className="space-y-4 text-center md:text-left">
           <h2 className="text-4xl font-bold">Sign up</h2>
@@ -152,7 +152,7 @@ const SignUp = ({ onBackToLogin }) => {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+              className="bg-blue-300 text-black px-4 py-2 rounded-md flex justify-center font-bold mt-4 hover:bg-blue-500 hover:text-white w-full"
             >
               Sign up
             </button>
