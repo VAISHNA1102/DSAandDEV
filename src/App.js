@@ -13,6 +13,8 @@ import Otp from './components/Auth/Otp'
 import MyTutorials from './components/Auth/MyTutorials';
 import Settings from './components/Auth/Settings';
 import Cart from './components/Auth/Cart';
+import ForgotPassword from './components/Auth/ForgotPassword';
+import UpdatePassword from './components/Auth/UpdatePassword';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               <Route path="/contact" element={<Contact/>}/>
               {/* <Route path='profile' element={<Profile/>}/> */}
               <Route path="/verify-email" element={<Otp/>}/>
+              <Route path='/forgot-password' element={<ForgotPassword/>}/>
+              <Route path='/update-password/:id' element={<UpdatePassword/>}/>
               <Route path="/dashboard/my-profile" element={<Profile/>}/>
               <Route path="/dashboard/myTutorials" element={<MyTutorials/>}/>
               <Route path="/dashboard/settings" element={<Settings/>}/>

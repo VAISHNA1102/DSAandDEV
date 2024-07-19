@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../common/Spinner'
 import {login} from "../../services/operations/authAPIs"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const dispatch=useDispatch();
@@ -74,7 +74,7 @@ const Login = () => {
                 </button>
               </form>
               <div className="mt-6 flex flex-col sm:flex-row justify-between text-sm">
-                <div href="#" className="text-blue-600 hover:underline mb-2 sm:mb-0">Forgot Password?</div>
+                <Link to="/forgot-password" className="text-blue-600 hover:underline mb-2 sm:mb-0 hover:cursor-pointer">Forgot Password?</Link>
               </div>
             </div>
           </div>
