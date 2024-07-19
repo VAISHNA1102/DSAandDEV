@@ -8,7 +8,6 @@ import {user} from "../apis"
 export const sendOtp = (email, navigate) => {
     return async (dispatch) => {
         dispatch(setLoading(true));
-        console.log("user SENDOTP_API", user.SENDOTP_API)
         const toastID=toast.loading("Loading...");
         try{
             const response = await apiConnector("POST", user.SENDOTP_API, {
@@ -81,7 +80,6 @@ export const login=(email, password, navigate)=>{
             localStorage.setItem("token", JSON.stringify(response.data.token));
             localStorage.setItem("user", JSON.stringify(response.data.user));
 
-            console.log(localStorage.getItem("user"));
             // calling auto logout component            
             setTimeout( () => {
                 console.log("Auto logout triggered"); 

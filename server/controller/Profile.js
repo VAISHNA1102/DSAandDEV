@@ -71,10 +71,9 @@ exports.deleteAccount = async (req, res) => {
             })
         }
         // Delete Assosiated Profile with the User
-        await Profile.findByIdAndDelete({
-            _id: new mongoose.Types.ObjectId(user.additionalDetails),
-        })
-        for (const tutorialId of user.tutorial) {
+        await Profile.findByIdAndDelete(user.additionalDetails);
+
+        for(const tutorialId of user.tutorial) {
             await Tutorial.findByIdAndUpdate(
             tutorialId,
             { $pull: { studentsEnrolled: id } },
@@ -92,7 +91,7 @@ exports.deleteAccount = async (req, res) => {
         console.log(error)
         res.status(500).json({ 
             success: false, 
-            message: "User Cannot be deleted successfully" 
+            message: "User Cannot be deleted" 
         })
     }
 }

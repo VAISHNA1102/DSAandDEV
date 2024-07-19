@@ -10,10 +10,7 @@ function Navbar() {
   const dispatch = useDispatch(); // Initialize useDispatch hook
   const navigate = useNavigate();
 
-  const { token, user } = useSelector(state => ({
-    token: state.auth.token,
-    user: state.profile.user
-  }));
+  const { token } = useSelector(state =>state.auth)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

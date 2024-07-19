@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { setEditProfile } from "../../../services/slices/editSlice"
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { setProfile } from "../../../services/slices/profileSlice"
 import { updateProfile } from "../../../services/operations/ProfileAPIs"
 
 const ChangeProfileDetails = () => {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const { user } = useSelector((state) => state.profile)
 
     const { editProfile } = useSelector((state) => state.edit)
@@ -69,7 +66,7 @@ const ChangeProfileDetails = () => {
                             </div>
                             <form className='p-4 md:p-6'>
                                 <div className='flex flex-col gap-4 sm:gap-6 rounded-lg border border-richblack-700 bg-gray-900 mx-auto p-4 sm:p-6 md:p-8'>
-                                    <h3 className='font-bold text-xl sm:text-2xl md:text-3xl text-white'></h3>
+                                    {/* <h3 className='font-bold text-xl sm:text-2xl md:text-3xl text-white'></h3> */}
                                     <div className='flex flex-col gap-4 sm:gap-6'>
                                         <div className='flex flex-col md:flex-row gap-4 sm:gap-6 justify-between'>
                                             <label className='flex flex-col gap-1 sm:gap-2 w-full md:w-[48%]'>

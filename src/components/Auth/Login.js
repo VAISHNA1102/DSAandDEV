@@ -14,7 +14,6 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Login attempted with:', username, password);
     dispatch(login(username,password,navigate));
   };
 

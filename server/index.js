@@ -35,7 +35,7 @@ cloudinaryConnect();
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/tutorial", totutorialRoutes);
 app.use("/api/v1/profile", profileRoutes);
-app.use("/api/v1/contact", contactUs);
+app.use("/api/v1/", contactUs);
 
 
 app.get("/", (req, res) => {

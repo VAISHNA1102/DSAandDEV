@@ -116,7 +116,7 @@ export const deleteProfile=(token, navigate)=> {
     return async (dispatch) => {
       const toastId = toast.loading("Loading...")
       try{
-            const response = await apiConnector("DELETE", profile.DELETE_PROFILE, null, {
+            const response = await apiConnector("DELETE", profile.DELETE_ACCOUNT, null,{
             Authorization: `Bearer ${token}`,
             })
     
