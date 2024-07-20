@@ -36,12 +36,15 @@ exports.signup = async (req, res) => {
         }
 
         const response = await OTP.find({ email }).sort({ createdAt: -1 }).limit(1);
-
-        function arrayToNumber(otp) {
-            return Number(otp.join(''));
+        
+        let abc=otp;
+        if(Array.isArray(otp)){
+            const arrayToNumber=(otp)=>{
+                return Number(otp.join(''))
+            }
+            abc=arrayToNumber(otp)
         }
-        let abc=arrayToNumber(otp);
-
+        
         if (response.length === 0 || abc != (response[0].otp)) {
             return res.status(400).json({
                 success: false,

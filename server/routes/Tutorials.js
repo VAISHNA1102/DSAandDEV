@@ -31,7 +31,7 @@ router.post('/updateSubSection',auth,isAdmin,updateSubSection)
 router.post('/deleteSubSection',auth,isAdmin,deleteSubSection)
 
 //----------------------tutorial Progress route----------------------------
-router.post('/updateCourseProgress', auth, isStudent, updateTutorialProgress);
+router.post('/updateTutorialProgress', auth, isStudent, updateTutorialProgress);
 // router.get("/getProgressPercentage", auth, isAdmin, getProgressPercentage);
 
 //----------------------rating and review route----------------------------

@@ -50,8 +50,8 @@ export const getEnrolledTutorial=async(token)=>{
         }
         result = response.data.data
     }catch(e){
-        console.log("GET_USER_ENROLLED_COURSES_API API ERROR............", e)
-        toast.error("Could Not Get Enrolled Courses")
+        console.log("GET_USER_ENROLLED_TUTORIALS_API API ERROR............", e)
+        toast.error("Could Not Get Enrolled Tutorial")
     }
     toast.dismiss(toastId)
     return result;

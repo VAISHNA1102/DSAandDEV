@@ -11,7 +11,6 @@ const categorySchema=new mongoose.Schema({
     },
     tutorial:{
         type:mongoose.Schema.Types.ObjectId,
-        required:true,
         ref:"Tutorial",
     }
 })

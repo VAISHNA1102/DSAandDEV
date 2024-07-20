@@ -11,7 +11,6 @@ import SignUp from './components/Auth/SignUp';
 import Profile from './components/Auth/Profile'
 import Otp from './components/Auth/Otp'
 import MyTutorials from './components/Auth/MyTutorials';
-import Settings from './components/Auth/Settings';
 import Cart from './components/Auth/Cart';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import UpdatePassword from './components/Auth/UpdatePassword';
@@ -35,7 +34,6 @@ function App() {
               <Route path='/update-password/:id' element={<UpdatePassword/>}/>
               <Route path="/dashboard/my-profile" element={<Profile/>}/>
               <Route path="/dashboard/myTutorials" element={<MyTutorials/>}/>
-              <Route path="/dashboard/settings" element={<Settings/>}/>
               <Route path="/dashboard/cart" element={<Cart/>}/>
             </Routes>
           </Router>

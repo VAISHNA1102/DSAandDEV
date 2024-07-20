@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp, FaSearch, FaChevronLeft, FaChevronRight, FaBookOpen, FaCheckCircle, FaArrowLeft, FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { getFullTutorial } from '../../services/operations/tutorialAPIs';
 
 const TutorialPageInfo = () => {
+    const { currPath } = useParams();
+    const { token } = useSelector((state) => state.auth);
+    const {tutorialUId}=useSelector((state)=>state.tutorial)
+    const [datta, setData] = useState([])
+
+    useEffect(() => {
+        const fetchTutorials = async () => {
+            const dataa = await getFullTutorial(token,tutorialUId);
+            setData(dataa);
+            console.log("data",dataa)
+        }
+        fetchTutorials();
+      }, []);
+
     const [progress, setProgress] = useState(0);
     const [currentTopic, setCurrentTopic] = useState(null);
     const [openSections, setOpenSections] = useState({});

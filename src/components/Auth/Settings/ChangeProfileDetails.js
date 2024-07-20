@@ -30,7 +30,6 @@ const ChangeProfileDetails = () => {
     const handleModal = (e) => {
         e.preventDefault();
         dispatch(updateProfile(token, formData));
-        console.log("-------------------- User---------------------------------", user);
         dispatch(setEditProfile(false));
     }
 

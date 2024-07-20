@@ -4,6 +4,7 @@ const Category=require("../model/Category");
 const Section=require("../model/Section")
 const SubSection=require("../model/SubSection")
 const { uploadImageToCloudinary } = require("../utils/imageUploader")
+require("dotenv").config();
 
 
 //create Tutorial
@@ -200,6 +201,7 @@ exports.getTutorial=async(req,res)=>{
           {
             tutorialName: true,
             thumbnail: true,
+            tutorialDescription:true,
             createdBy: true,
             ratingAndreviews: true,
             studentsEnrolled: true,

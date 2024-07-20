@@ -22,3 +22,10 @@ export const profile={
 export const contactUss={
     CONTACT_US: BASE_URL+"/contact"
 }
+
+export const tutorial={
+    GET_TUTORIALS:BASE_URL+"/tutorial/getTutorial",
+    GET_FULL_TUTORIALS:BASE_URL+"/tutorial/getFullTutorial",
+    UPDATE_PROGRESS:BASE_URL+"/tutorial/updateTutorialProgress",
+    GET_PROGRESS:BASE_URL+"/tutorial/getProgressPercentage"
+}
