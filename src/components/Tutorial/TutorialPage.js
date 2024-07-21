@@ -3,6 +3,7 @@ import { FaChevronDown, FaChevronUp, FaSearch, FaChevronLeft, FaChevronRight, Fa
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getFullTutorial, updateTutorialProgress } from '../../services/operations/tutorialAPIs';
+import DOMPurify from 'dompurify';
 
 function TutorialPage() {
     const { tutorialId } = useParams();
@@ -181,8 +182,9 @@ function TutorialPage() {
                     <>
                         <h1 className="text-3xl font-bold mb-4">{currentTopic.title}</h1>
                         {currentTopic.description &&
-                            <div className="mb-6">
-                                {currentTopic.description}
+                            <div className="mb-6"
+                                dangerouslySetInnerHTML={{ __html:  DOMPurify.sanitize(currentTopic.description)}}
+                            >
                             </div>
                         }
                         <button
@@ -199,34 +201,6 @@ function TutorialPage() {
                 ) : (
                     <p>Select a topic from the sidebar to view its content.</p>
                 )}
-            </div>
-
-            {/* Right Sidebar */}
-            <div>
-                <div className={`w-64 bg-gray-800 transition-all duration-300 fixed top-0 right-0 h-full z-20 
-                    ${isRightSidebarOpen ? 'translate-x-0' : 'translate-x-full'}
-                    ${isMobile ? 'w-full' : 'md:w-64 md:relative'}`}>
-                    <div className="p-4">
-                        <h3 className="text-xl font-bold mb-4">On This Page</h3>
-                        {currentTopic && currentTopic.tutorialContent && (
-                            <ul className="space-y-2">
-                                {currentTopic.tutorialContent.map((item, index) => (
-                                    <li key={index} className="cursor-pointer hover:text-blue-300">
-                                        {item.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                    {/* Right Sidebar Toggle Button */}
-                    <button
-                        className="absolute top-[40%] -left-5 w-5 h-20 bg-gray-300 text-gray-600 flex items-center justify-center"
-                        onClick={toggleRightSidebar}
-                    >
-                        {isRightSidebarOpen ? <FaChevronRight size={12} /> : <FaChevronLeft size={12} />}
-                    </button>
-
-                </div>
             </div>
         </div>
     )
