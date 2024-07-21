@@ -14,6 +14,7 @@ import MyTutorials from './components/Auth/MyTutorials';
 import Cart from './components/Auth/Cart';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import UpdatePassword from './components/Auth/UpdatePassword';
+import TutorialPage from './components/Tutorial/TutorialPage';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<SignUp/>}/>
               <Route path='/tutorial' element = {<Tutorials/>}/>
-              <Route path="/tutorial/:tutorialName" element={<TutorialPageInfo/>} />
+              <Route path='/t' element = {<TutorialPage/>}/>
+              <Route path="/tutorial/:tutorialId" element={<TutorialPage/>} />
               <Route path="/contact" element={<Contact/>}/>
               {/* <Route path='profile' element={<Profile/>}/> */}
               <Route path="/verify-email" element={<Otp/>}/>

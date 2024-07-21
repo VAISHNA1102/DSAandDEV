@@ -1,26 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState={
-    loading:false,
-    tutorialUId:null,
-    subSectionUId:null
-}
+const initialState = {
+    loading: false,
+    tutorialUId: null,
+};
 
-const tutorialSlice=createSlice({
-    name:"tutorial",
-    initialState:initialState,
-    reducers:{
-        setLoading(state,value){
-            state.loading=value.payload
-        },
-        setTutorialUId(state,value){
-            state.tutorialUId=value.payload
-        },
-        setsubSectionUId(state,value){
-            state.subSectionUId=value.payload
-        },
-    }
-})
+const tutorialSlice = createSlice({
+    name: "tutorial",
+    initialState,
+    reducers: {
+        setLoading(state, action) {
+            state.loading = action.payload;
+        }
+    },
+});
 
-export const {setLoading,setTutorialUId,setsubSectionUId}=tutorialSlice.actions;
+export const { setLoading, setTutorialUId, setSubSectionUId } = tutorialSlice.actions;
 export default tutorialSlice.reducer;

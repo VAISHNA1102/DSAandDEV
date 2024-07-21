@@ -58,7 +58,6 @@ exports.updateProfile = async (req, res) => {
       }
 }
 
-
 exports.deleteAccount = async (req, res) => {
     try {
         const id = req.user.id

@@ -228,7 +228,7 @@ exports.getTutorial=async(req,res)=>{
 //get full tutorial
 exports.getFullTutorial=async(req,res)=>{
     try {
-        const { tutorialId } = req.body
+        const { tutorialId } = req.query;  // Use req.query for GET requests
         const tutorialDetails = await Tutorial.findOne({
           _id: tutorialId,
         })
@@ -239,7 +239,7 @@ exports.getFullTutorial=async(req,res)=>{
             },
           })
           .populate("category")
-          .populate("ratingAndreviews")
+          .populate("ratingAndreview")
           .populate({
             path: "tutorialContent",
             populate: {
@@ -247,14 +247,14 @@ exports.getFullTutorial=async(req,res)=>{
             },
           })
           .exec()
-    
+          
         if (!tutorialDetails) {
           return res.status(400).json({
             success: false,
             message: `Could not find Tutorial with id: ${tutorialId}`,
           })
         }
-    
+
         return res.status(200).json({
           success: true,
           data:tutorialDetails

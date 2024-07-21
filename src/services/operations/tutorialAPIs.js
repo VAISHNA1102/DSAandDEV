@@ -1,7 +1,6 @@
 import { toast } from "react-hot-toast"
 import { apiConnector } from "../apiConnector";
 import { tutorial } from "../apis";
-// import { setLoading } from "../slices/tutorialSlice";
 
 
 export const getTutorial=async(token)=>{
@@ -24,15 +23,14 @@ export const getTutorial=async(token)=>{
     return result;
 }
 
-
 export const getFullTutorial=async(token,tutorialId)=>{
     const toastId = toast.loading("Loading...")
     let result=[];
+    console.log(tutorialId)
     try{
-        const response=await apiConnector("GET",tutorial.GET_FULL_TUTORIALS,tutorialId,{
+        const response=await apiConnector("GET",`${tutorial.GET_FULL_TUTORIALS}?tutorialId=${tutorialId}`,null,{
             Authorization: `Bearer ${token}`,
         })
-
         if(!response.data.success){
             throw new Error(response.data.message)
         }
@@ -48,6 +46,7 @@ export const getFullTutorial=async(token,tutorialId)=>{
 export const updateTutorialProgress=(token,tutorialId,subsectionId)=>{
     return async(dispatch)=>{
         const toastId=toast.loading("Loading....");
+        console.log("updateTutorialProgress");
         try{
             const response=await apiConnector("POST",tutorial.UPDATE_PROGRESS,{tutorialId,subsectionId},{
                 "Content-Type":"application/json",

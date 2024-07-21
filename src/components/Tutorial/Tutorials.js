@@ -19,17 +19,12 @@ const Tutorials =() => {
         setCardData(data);
       }
     };
-    dispatch(setTutorialUId(null));
     fetchTutorials();
   }, [token]);
 
   const handleCardClick = (heading) => {
-    navigate(`/tutorial/${heading.toLowerCase()}`);
+    navigate(`/tutorial/${heading}`)
   };
-
-  const handleTutId=(tutId)=>{
-    dispatch(setTutorialUId(tutId));
-  }
 
   return (
     <div >
@@ -42,8 +37,8 @@ const Tutorials =() => {
             key={card._id} 
             className="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg overflow-hidden flex flex-col items-center border-2 border-gray-200 border-opacity-20 group hover:cursor-pointer"
             onClick={() => {
-              handleCardClick(card.tutorialName)
-              handleTutId(card._id)
+              handleCardClick(card._id)
+              // handleTutId(card._id)
             }}
           >
             <div className="overflow-hidden">
